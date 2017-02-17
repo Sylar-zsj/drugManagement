@@ -1,0 +1,122 @@
+		
+		body{
+			background: url(../images/bg.jpg) 0px 0px no-repeat;
+			background-size:100% 100%;
+		
+		}
+		
+		/* 类选择器 */
+		.main_bar{
+			width:1345px;
+			height:400px;
+			margin:140px auto;
+		}
+		/*id选择器*/
+		#login_form{
+			height:100%;
+			width:500px;
+			margin:0 auto;
+			margin-left:30%;
+			background-color:#003333;
+		}
+		.title{
+			width:100%;
+			height:50px;
+			background: url(../images/timg.jpg) 0px 0px repeat;
+			border-bottom:1px solid #ffffff;
+			font-size:20pt;
+			font-family:"微软雅黑";
+			line-height:55px;	/*设置行高*/
+			text-align:center; /*设置文本居中*/
+			color:#044682;
+		}
+		#form_widget{
+			width:100%;
+			height:350px;
+			background-color:#808080;
+		}
+		.ttxt{
+			display:inline-block;
+			width:70px;
+			margin:0 auto;
+			margin-left:10%;
+			height:30px;
+			line-height:30px;
+			font-size:15pt;	
+			padding-left:8px;
+			color:white;
+			background-color:#C2C2C2;
+			text-align:right;
+			border-radius:8px;
+			border:0;
+		}
+		
+		.txt{
+			/*display:block;*/ /*设置为独立块(换行)*/
+			width:320px;
+			margin:0 auto;/* margin-left:10% */
+			margin-left:4px;
+			margin-top:10px;
+			margin-bottom:4px;
+			height:35px;
+			line-height:35px;
+			font-size:15pt;	
+			border-radius:8px;
+			border:0;
+			padding-left:8px;
+			color:#C2C2C2;
+		}
+		.checkImage{
+			margin-left:-100px;
+			height:35px;
+			line-height:35px;
+			width:100px;
+			border-radius:8px;
+			border:0;
+			vertical-align:middle;
+			margin-top:-8px;
+		}
+		.errorMsg{
+			width:100%;
+			text-align:center;
+			color:red;
+		}
+		
+		#search_pass_link{
+			width:378px;
+			text-align:right;
+			padding:5px;
+			margin:0 auto;
+			margin-left:15%;
+		}
+		/*层级选择器*/
+		#search_pass_link a{
+			color:#000000;
+			text-decoration:none;
+		}
+		/*伪类*/
+		#search_pass_link a:hover{
+			color:#ff0000;
+			text-decoration:underline;
+		}
+		.btn{
+			width:70%;
+			height:40px;
+			margin-left:15%;
+			margin-top:6%;
+			border:0;
+			font-size:14pt;
+			font-family:"微软雅黑";
+			background-color:#C2C2C2;
+			color:#ffffff;
+			cursor:pointer;/*设置鼠标指针样式*/
+			border-radius:20px;/*设置圆角边框 css3+ */
+		}
+		#copyright{
+			width:100%;
+			text-align:center;
+			padding-top:40px;
+			font-family:"微软雅黑";
+			color:#E0E0E0;
+			
+		}
