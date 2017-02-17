@@ -8,14 +8,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
   <base href="<%=basePath%>">
-
-  	 <title>-系统登录</title>
-
+  	 <title>系统登录</title>
   	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   	<link rel="stylesheet" href="css/manager_login.css" type="text/css"></link>
   	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
   	<script type="text/javascript" src="js/login.js"></script>
   	</head>
+ <!--  	<script type="text/javascript">
+  		function change(){
+		var checkImg1 = document.getElementById("checkImg");
+		checkImg1.src="checkImg.action?time="+new Date().getTime();
+	} 
+  	</script>-->
   
  <body leftmargin="0">
 		<div class="main_bar">
@@ -25,8 +29,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<!-- <form action="user_login.action" method="post" novalidate="novalidate"> -->
 				<div id="form_widget">
-					<br>
 					<span class="errorMsg"></span>
+					<br>
 					<div class="ttxt">用户名:</div>
 					<input type="text" placeholder="请输入账号"  name="u_name" id="u_name" class="txt"/>
 					<br/>
@@ -34,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<input type="password" placeholder="请输入密码" name="u_password" id="u_password" class="txt"/>
 					<br/>
 					<div class="ttxt">验证码:</div>
-					<input type="text" placeholder="请输入验证码" id="checkcode" name="checkcode" class="txt"/><img class="checkImage"  id="checkImg" src="checkImg.action"  title="点击更换验证码">
+					<input type="text" placeholder="请输入验证码" id="checkcode" name="checkcode"  class="txt"/><img class="checkImage"  id="checkImg" src="checkImg.action"  title="点击更换验证码">
 					<br>
 					<input type="submit" value="登录" class="btn" onmouseover="this.style.backgroundColor='#044682'" onmouseout="this.style.backgroundColor='#C2C2C2'">
 					<br>

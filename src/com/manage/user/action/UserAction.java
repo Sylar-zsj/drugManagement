@@ -35,22 +35,25 @@ public class UserAction extends ActionSupport implements ModelDriven{
 		this.checkcode = checkcode;
 	}
 
-
 	public String login(){
 		String code = (String) ServletActionContext.getRequest().getSession().getAttribute("checkcode");
-		String errorMessage=" ";
+		String errorMessage="";
 		if(!checkcode.equalsIgnoreCase(code)){
-			errorMessage="验证码不正确!";
-			return "errorMessage";
+			errorMessage="验证码不正确！";
+			//将errorMessageput到xml中的对应字段中  
+			ServletActionContext.getContext().put("errorMessage", errorMessage);
+			return "loginError";
 		}
 		User existUser = iUserService.find(user);
 		if(existUser == null){
-			this.addFieldError("validError","用户名或密码错误!");
+			errorMessage="用户名或密码不正确！";
+			ServletActionContext.getContext().put("errorMessage", errorMessage);
 			return "loginError";
 		}else{
+			errorMessage="";
 			ServletActionContext.getRequest().getSession().setAttribute("existUser", existUser);
 		}
-		return "loginSuccess";
+		return "loginError";
 	}
 	
 	@Override

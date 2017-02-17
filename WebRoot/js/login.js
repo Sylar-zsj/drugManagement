@@ -1,21 +1,32 @@
 $(function(){
+	
+	//更换验证码
 	$("#checkImg").click(function(){
 		this.src="checkImg.action?time="+new Date().getTime();
 	});
 	
-	var u_name=$("#u_name").val();
 	
-	var u_password=$("#u_password").val();
-	var checkcode=$("#checkcode").val();
+	
+	//提交
 	$(".btn").click(function(){
+		var checkcode=$("#checkcode").val();
+		var u_name=$("#u_name").val();
+		var u_password=$("#u_password").val();
 		$.ajax({
-			url:'user_login.action',
-			type:'GET',
-			data:{'u_name':u_name,"u_name":u_name,'checkcode':checkcode},
-			dataType:json,
+			url:"user_login.action",
+			type:"GET",
+			data:{"u_name":u_name,"u_password":u_password,"checkcode":checkcode},
+			dataType:'json',
+			async:false,
 			success:function(data){
-				$(".errorMsg").val(data.errorMessage);
+				if(""==data ||null==data){
+					window.location.href="index.action";
+				}else{
+					$(".errorMsg").html(data);
+				}
 			}
 		});
+		
 	});
+	
 });

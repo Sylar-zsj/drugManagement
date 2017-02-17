@@ -8,8 +8,16 @@
 	<!-- <constant name = "struts.i18n.encoding" value = "UTF-8" /> -->
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="false" />
-
     <package name="default" namespace="/" extends="struts-default">
+    <!-- 为了返回json信息给前台 -->
+    	<result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+        <interceptors>
+            <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        </interceptors>
+        
+       
     	<!-- <interceptors>
     		<interceptor name="privilegeInteceptor" class="cn.itcast.shop.inteceptor.PrivilegeInteceptor"/>
     	</interceptors>
@@ -21,19 +29,19 @@
     	</global-results>
 		
 		这里需要注意的是，action即可由struts框架来创建，也可由spring容器来注入（可选的），当使用spring来注入的时候，
-		此处的action的class属性必须和spring配置的id属性相对应。
+		此处的action的class属性必须和spring配置的id属性相对应。 -->
         <action name="index" class="indexAction">
-            <result name="index">/WEB-INF/jsp/index.jsp</result>
-        </action> -->
+            <result name="index">/WEB-INF/jsp/manager_main.jsp</result>
+        </action>
         
         <action name="user_*" class="userAction" method="{1}">
         	<!-- <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
         	<result name="input">/WEB-INF/jsp/regist.jsp</result> -->
-        	<result name="loginSuccess">/WEB-INF/jsp/success.jsp</result>
         	<!-- <result name="quit" type="redirectAction">index</result>-->
-        	<result name="errorMessage" type="json">
+        	<result name="loginError" type="json">
         		<param name="root">errorMessage</param>
         	</result> 
+        	<result name="loginSuccess">/WEB-INF/jsp/manager_main.jsp</result>
         </action>
         
         <action name="checkImg" class="checkImgAction"></action>
