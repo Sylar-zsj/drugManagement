@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
   <base href="<%=basePath%>">
-  	 <title>系统登录1111</title>
+  	 <title>系统登录1112</title>
   	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   	<link rel="stylesheet" href="css/manager_login.css" type="text/css"></link>
   	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
