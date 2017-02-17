@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
   <base href="<%=basePath%>">
 
-  	 <title>系统登录1112</tiiiiiiiiiiiiiitle>
+  	 <title>-系统登录</title>
 
   	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   	<link rel="stylesheet" href="css/manager_login.css" type="text/css"></link>
