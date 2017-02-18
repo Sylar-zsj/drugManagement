@@ -11,8 +11,13 @@ import com.opensymphony.xwork2.ActionSupport;
 @Component("indexAction")
 @Scope("prototype")
 public class indexAction extends ActionSupport{
-	public String execute(){
-		return "index";
+	
+	public String manage(){
+		return "manage";
+	}
+	
+	public String welcome(){
+		return "welcome";
 	}
 
 }

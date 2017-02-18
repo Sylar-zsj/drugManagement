@@ -30,8 +30,9 @@
 		
 		这里需要注意的是，action即可由struts框架来创建，也可由spring容器来注入（可选的），当使用spring来注入的时候，
 		此处的action的class属性必须和spring配置的id属性相对应。 -->
-        <action name="index" class="indexAction">
-            <result name="index">/WEB-INF/jsp/manager_main.jsp</result>
+        <action name="index_*" class="indexAction" method="{1}">
+            <result name="manage">/WEB-INF/jsp/manage.jsp</result>
+            <result name="welcome">/WEB-INF/jsp/manager_welcome.jsp</result>
         </action>
         
         <action name="user_*" class="userAction" method="{1}">
@@ -41,7 +42,7 @@
         	<result name="loginError" type="json">
         		<param name="root">errorMessage</param>
         	</result> 
-        	<result name="loginSuccess">/WEB-INF/jsp/manager_main.jsp</result>
+        	<result name="loginSuccess">/WEB-INF/jsp/manage.jsp</result>
         </action>
         
         <action name="checkImg" class="checkImgAction"></action>

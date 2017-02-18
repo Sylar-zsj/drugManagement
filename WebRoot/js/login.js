@@ -20,7 +20,7 @@ $(function(){
 			async:false,
 			success:function(data){
 				if(""==data ||null==data){
-					window.location.href="index.action";
+					window.location.href="index_manage.action";
 				}else{
 					$(".errorMsg").html(data);
 				}
