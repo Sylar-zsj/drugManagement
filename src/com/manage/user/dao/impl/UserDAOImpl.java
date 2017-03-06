@@ -38,4 +38,12 @@ public class UserDAOImpl implements IUserDAO{
 		return null;
 	}
 
+
+	@Override
+	public boolean addAdmin(User user) {
+		boolean flag=false;
+		flag=(Boolean) this.hibernateTemplate.save(user);
+		return flag;
+	}
+
 }

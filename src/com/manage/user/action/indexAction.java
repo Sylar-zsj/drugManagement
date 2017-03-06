@@ -19,5 +19,9 @@ public class indexAction extends ActionSupport{
 	public String welcome(){
 		return "welcome";
 	}
+	
+	public String addAdmin(){
+		return "addAdmin";
+	}
 
 }

@@ -1,40 +1,93 @@
 		
 		body{
-			background: url(../images/bg.jpg) 0px 0px no-repeat;
+			background: url(../images/timg.jpg) 0px 0px no-repeat;
 			background-size:100% 100%;
 		
 		}
 		
-		/* 类选择器 */
-		.main_bar{
-			width:1345px;
-			height:400px;
-			margin:140px auto;
+		*{
+		    font-family: "opensans";
+		    font-size: 20px;
+		    color: white;
 		}
+		
+		
+		
+		/* 类选择器   登录*/  
+		.main_bar{
+			position: relative;
+			width:1345px;
+			height:350px;
+			left: 40%;
+   			top: 32%;
+   			-webkit-animation: enterdiv 1.5s ease-in;
+		}
+		
+		
+		
+		@-webkit-keyframes enterdiv {
+		    0% {transform: translateY(-100%)}
+		    100% {transform: translateY(0%)}
+		}
+		
+		
+		
+		.bg{
+		    position: absolute;
+		    width: 500px;
+		    height: 100%;;
+		    background: #6d6d6d;
+		    opacity: 0.4;
+		    border-radius: 5px;
+		}
+		
 		/*id选择器*/
 		#login_form{
+			position: absolute;
 			height:100%;
 			width:500px;
-			margin:0 auto;
-			margin-left:30%;
-			background-color:#003333;
 		}
-		.title{
-			width:100%;
-			height:50px;
-			background: url(../images/timg.jpg) 0px 0px repeat;
-			border-bottom:1px solid #ffffff;
-			font-size:20pt;
-			font-family:"微软雅黑";
-			line-height:55px;	/*设置行高*/
-			text-align:center; /*设置文本居中*/
-			color:#044682;
+
+        #login_form ul{
+		    width: 400px;
 		}
-		#form_widget{
-			width:100%;
-			height:350px;
-			background-color:#808080;
+		
+		#login_form ul li{
+		    text-align: left;
+		    height: 40px;
+		    list-style: none;
+		    margin-top:12px;
 		}
+		
+		 /* .password{
+		    margin-left: 4px;
+		}
+		
+		.account{
+		    margin-left: 16px;
+		}  */
+		
+		.login{
+		    position: relative;
+		    top:30px;
+		    float: left;
+		    width: 88px;
+		    line-height: 2;
+		    padding: 0px 0px 0px 80px;
+		    cursor:pointer;/*设置鼠标指针样式*/
+		}
+		
+		.rest{
+		    position: relative;
+		    left: 80px;
+		    top:30px;
+		    float: left;
+		    width: 88px;
+		    line-height: 2;
+		    padding:0px 0px 0px 40px;
+		}
+        
+			
 		.ttxt{
 			display:inline-block;
 			width:70px;
@@ -74,7 +127,7 @@
 			border-radius:8px;
 			border:0;
 			vertical-align:middle;
-			margin-top:-8px;
+			margin-top:-4px;
 		}
 		.errorMsg{
 			width:100%;
@@ -100,24 +153,4 @@
 			color:#ff0000;
 			text-decoration:underline;
 		}
-		.btn{
-			width:70%;
-			height:40px;
-			margin-left:15%;
-			margin-top:6%;
-			border:0;
-			font-size:14pt;
-			font-family:"微软雅黑";
-			background-color:#C2C2C2;
-			color:#ffffff;
-			cursor:pointer;/*设置鼠标指针样式*/
-			border-radius:20px;/*设置圆角边框 css3+ */
-		}
-		#copyright{
-			width:100%;
-			text-align:center;
-			padding-top:40px;
-			font-family:"微软雅黑";
-			color:#E0E0E0;
-			
-		}
+		

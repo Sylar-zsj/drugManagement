@@ -26,8 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <header id="header">
 	<ul id="menu">
 		<li id="logo" class="hidden-xs">
-			<a href="index.html">
-				<img src="images/logo.png"/>
+			<a href="index.jsp">
+				<img src=""/>
 			</a>
 		</li>
 		<li class="pull-right">
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="s-profile">
 			<a class="waves-effect waves-light" href="javascript:;">
 				<div class="sp-pic">
-					<img src="images/avatar.jpg"/>
+					<img src="js/user_img.js" class="userPic"/>
 				</div>
 				<div class="sp-info">
 					张思静，您好！
@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li class="sub-menu">
 				<a class="waves-effect" href="javascript:;"><i class="zmdi zmdi-widgets"></i> 系统组织管理</a>
 				<ul>
-					<li><a class="waves-effect" href="javascript:Tab.addTab('系统注册', '1.html');">系统注册</a></li>
+					<li><a class="waves-effect" href="javascript:Tab.addTab('系统注册', 'index_welcome.action');">系统注册</a></li>
 					<li><a class="waves-effect" href="javascript:Tab.addTab('组织管理', '2.html');">组织管理</a></li>
 				</ul>
 			</li>
@@ -119,17 +119,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</li>
 			<li class="sub-menu toggled">
-				<a class="waves-effect" href="javascript:;"><i class="zmdi zmdi-widgets"></i> DEMO</a>
+				<a class="waves-effect" href="javascript:;"><i class="zmdi zmdi-widgets"></i>系统管理</a>
 				<ul>
-					<li><a class="waves-effect" href="javascript:Tab.addTab('获取资源(DEMO)', '9.html');">获取资源(DEMO)</a></li>
-					<li><a class="waves-effect" href="javascript:Tab.addTab('获取权限(DEMO)', '10.html');">获取权限(DEMO)</a></li>
-					<li><a class="waves-effect" href="javascript:Tab.addTab('单点登录(DEMO)', '11.html');">单点登录(DEMO)</a></li>
-					<li><a class="waves-effect" href="javascript:Tab.addTab('增删改查', 'crud.html');">增删改查</a></li>
-					<li><a class="waves-effect" href="javascript:Tab.addTab('公共素材', 'demo.html');">公共素材</a></li>
+					<li><a class="waves-effect" href="javascript:Tab.addTab('新增管理员', 'index_addAdmin.action');">新增管理员</a></li>
+					<li><a class="waves-effect" href="javascript:Tab.addTab('修改密码', '10.html');">修改密码</a></li>
 				</ul>
 			</li>
 			<li>
-				<div class="upms-version">&copy; ZHENG-UPMS V1.0.0</div>
+				<div class="upms-version">&copy; Sylar-ZHANG V1.0.0</div>
 			</li>
 		</ul>
 		<!-- /菜单区 -->
@@ -164,5 +161,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="js/bootstrap-3.3.0/BootstrapMenu.min.js"></script>
 <script src="js/device.min.js"></script>
 <script src="js/manage.js"></script>
+<script src="js/user_img.js"></script>
 </body>
 </html>

@@ -9,35 +9,36 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="false" />
     <package name="default" namespace="/" extends="struts-default">
-    <!-- 为了返回json信息给前台 -->
+        <!-- 为了返回json信息给前台 -->
     	<result-types>
             <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
         </result-types>
         <interceptors>
             <interceptor name="json" class="org.apache.struts2.json.JSONInterceptor"/>
+        <!-- 登录的拦截器 -->    
+    		<interceptor name="loginIntercepter" class="intercepter.loginIntercepter"/>
+    		
+    		<!-- 拦截器栈  (定义之后   其他action里就只用引用这个拦截器栈了)-->
+    		<interceptor-stack name="login">
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    			<interceptor-ref name="loginIntercepter"></interceptor-ref>
+    		</interceptor-stack> 
         </interceptors>
-        
-       
-    	<!-- <interceptors>
-    		<interceptor name="privilegeInteceptor" class="cn.itcast.shop.inteceptor.PrivilegeInteceptor"/>
-    	</interceptors>
     	
     	<global-results>
-    		<result name="msg">/WEB-INF/jsp/msg.jsp</result>
-    		<result name="loginPage">/WEB-INF/jsp/login.jsp</result>
-    		<result name="loginError">/admin/index.jsp</result>
+    		<result name="loginError">/warn.jsp</result>
     	</global-results>
 		
-		这里需要注意的是，action即可由struts框架来创建，也可由spring容器来注入（可选的），当使用spring来注入的时候，
+		<!-- 这里需要注意的是，action即可由struts框架来创建，也可由spring容器来注入（可选的），当使用spring来注入的时候，
 		此处的action的class属性必须和spring配置的id属性相对应。 -->
         <action name="index_*" class="indexAction" method="{1}">
             <result name="manage">/WEB-INF/jsp/manage.jsp</result>
             <result name="welcome">/WEB-INF/jsp/manager_welcome.jsp</result>
+            <result name="addAdmin">/WEB-INF/jsp/add_Admin.jsp</result>
+            <interceptor-ref name="login"></interceptor-ref>
         </action>
         
         <action name="user_*" class="userAction" method="{1}">
-        	<!-- <result name="registPage">/WEB-INF/jsp/regist.jsp</result>
-        	<result name="input">/WEB-INF/jsp/regist.jsp</result> -->
         	<!-- <result name="quit" type="redirectAction">index</result>-->
         	<result name="loginError" type="json">
         		<param name="root">errorMessage</param>
@@ -113,6 +114,7 @@
         	<interceptor-ref name="privilegeInteceptor"/>
         	<interceptor-ref name="defaultStack"/>
         </action> -->
+    	
         
     </package>
 

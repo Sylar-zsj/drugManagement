@@ -32,4 +32,11 @@ public class UserServiceImpl implements IUserService{
 		return iUserDAO.find(user);
 	}
 
+
+	@Override
+	public boolean addAdmin(User user) {
+		boolean flag=iUserDAO.addAdmin(user);
+		return flag;
+	}
+
 }

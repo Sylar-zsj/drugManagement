@@ -56,6 +56,32 @@ public class UserAction extends ActionSupport implements ModelDriven{
 		return "loginError";
 	}
 	
+	/**
+	 * 获取管理员图片
+	 * @return
+	 */
+	public String getPic(){
+		User user=(User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		if(user != null){
+			String userPic = user.getU_pic();
+			ServletActionContext.getContext().put("errorMessage", userPic);
+		}
+		return "loginError";
+	}
+	
+	public String addAdmin(){
+		boolean flag=iUserService.addAdmin(user);
+		String tips="";
+		if(flag){
+			tips = "新增成功";
+		}else{
+			tips="新增失败";
+		}
+		ServletActionContext.getContext().put("errorMessage", tips);
+		return "loginError";
+	}
+	
+	
 	@Override
 	public Object getModel() {
 		return user;

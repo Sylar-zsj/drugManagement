@@ -12,6 +12,7 @@ public class User implements Serializable{
 	private int u_id;
 	private String u_name;
 	private String u_password;
+	private String u_pic;
 	
 	
 	//必须要这个主键注解   否则报错
@@ -35,4 +36,12 @@ public class User implements Serializable{
 	public void setU_password(String u_password) {
 		this.u_password = u_password;
 	}
+	public String getU_pic() {
+		return u_pic;
+	}
+	public void setU_pic(String u_pic) {
+		this.u_pic = u_pic;
+	}
+	
+	
 }

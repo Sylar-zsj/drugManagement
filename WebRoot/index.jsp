@@ -23,30 +23,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
  <body leftmargin="0">
 		<div class="main_bar">
+			<div class="bg"></div>
 			<div id="login_form">
-				<div class="title">
-					药店管理系统登录界面
-				</div>
-				<!-- <form action="user_login.action" method="post" novalidate="novalidate"> -->
-				<div id="form_widget">
 					<span class="errorMsg"></span>
 					<br>
-					<div class="ttxt">用户名:</div>
-					<input type="text" placeholder="请输入账号"  name="u_name" id="u_name" class="txt"/>
-					<br/>
-					<div class="ttxt">密&nbsp;码:</div>
-					<input type="password" placeholder="请输入密码" name="u_password" id="u_password" class="txt"/>
-					<br/>
-					<div class="ttxt">验证码:</div>
-					<input type="text" placeholder="请输入验证码" id="checkcode" name="checkcode"  class="txt"/><img class="checkImage"  id="checkImg" src="checkImg.action"  title="点击更换验证码">
-					<br>
-					<input type="submit" value="登录" class="btn" onmouseover="this.style.backgroundColor='#044682'" onmouseout="this.style.backgroundColor='#C2C2C2'">
-					<br>
-					<div id="copyright">
-						Power By ZSJ&copy;CopyRight CX since 2016
-					</div>
-				</div>
-				<!-- </form> -->
+					<ul>
+		                <li>用户名:<input type="text" name="u_name" id="u_name"  class="txt" required aria-required="true" placeholder="请输入账号"></li>
+		                <li>密&nbsp;码:<input type="password" name="u_password"  id="u_password" class="txt" required aria-required="true"></li>
+		                <li>验证码:<input type="text" placeholder="请输入验证码" id="checkcode" name="checkcode"  class="txt"/><img class="checkImage"  id="checkImg" src="checkImg.action"  title="点击更换验证码"></li>
+		               
+		                <li class="login"><a class="btn">登录</a></li>
+		                <li class="rest"><a href="javascript:window.location.reload()">重置</a></li>
+           			 </ul>
+			</div>
 			</div>
 		</div>
 	</body>
