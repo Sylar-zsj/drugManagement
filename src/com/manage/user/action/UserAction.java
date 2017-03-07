@@ -1,11 +1,14 @@
 package com.manage.user.action;
 
+import java.io.File;
+
 import javax.annotation.Resource;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.manage.user.model.User;
 import com.manage.user.service.IUserService;
@@ -18,11 +21,39 @@ public class UserAction extends ActionSupport implements ModelDriven{
 	@Resource
 	private IUserService iUserService;
 	
+	//文件
+	private File myFile;
+	private String imageFileName; //文件名称
+    private String imageContentType; //文件类型
+	
+	public File getMyFile() {
+		return myFile;
+	}
+
+	public void setMyFile(File myFile) {
+		this.myFile = myFile;
+	}
+	
+	public String getImageFileName() {
+		return imageFileName;
+	}
+
+	public void setImageFileName(String imageFileName) {
+		this.imageFileName = imageFileName;
+	}
+
+	public String getImageContentType() {
+		return imageContentType;
+	}
+
+	public void setImageContentType(String imageContentType) {
+		this.imageContentType = imageContentType;
+	}
+
 	public IUserService getiUserService() {
 		return iUserService;
 	}
 
-	
 	public void setiUserService(IUserService iUserService) {
 		this.iUserService = iUserService;
 	}
@@ -70,6 +101,8 @@ public class UserAction extends ActionSupport implements ModelDriven{
 	}
 	
 	public String addAdmin(){
+		//
+		
 		boolean flag=iUserService.addAdmin(user);
 		String tips="";
 		if(flag){
