@@ -3,7 +3,6 @@ package com.manage.user.service.impl;
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.manage.user.dao.IUserDAO;
@@ -28,8 +27,8 @@ public class UserServiceImpl implements IUserService{
 
 
 	@Override
-	public User find(User user) {
-		return iUserDAO.find(user);
+	public User findByNameAndPsw(User user) {
+		return iUserDAO.findByNameAndPsw(user);
 	}
 
 
@@ -37,6 +36,12 @@ public class UserServiceImpl implements IUserService{
 	public boolean addAdmin(User user) {
 		boolean flag=iUserDAO.addAdmin(user);
 		return flag;
+	}
+
+
+	@Override
+	public User findByName(String name) {
+		return iUserDAO.findByName(name);
 	}
 
 }
